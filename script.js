@@ -16,6 +16,29 @@
   onScroll();
   window.addEventListener("scroll", onScroll, { passive: true });
 
+  /* ---------- Parallax dos flares do hero ---------- */
+  var flares = document.querySelectorAll(".flare[data-parallax]");
+  if (flares.length &&
+      !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    var ticking = false;
+    function updateParallax() {
+      var y = window.scrollY;
+      flares.forEach(function (el) {
+        var factor = parseFloat(el.getAttribute("data-parallax")) || 0;
+        el.style.transform = "translate3d(0," + (y * factor).toFixed(2) + "px, 0)";
+      });
+      ticking = false;
+    }
+    function onParallaxScroll() {
+      if (!ticking) {
+        ticking = true;
+        requestAnimationFrame(updateParallax);
+      }
+    }
+    updateParallax();
+    window.addEventListener("scroll", onParallaxScroll, { passive: true });
+  }
+
   /* ---------- Menu mobile ---------- */
   var toggle = document.getElementById("navToggle");
   var nav = document.getElementById("nav");
@@ -49,32 +72,6 @@
     reveals.forEach(function (el) { io.observe(el); });
   } else {
     reveals.forEach(function (el) { el.classList.add("visible"); });
-  }
-
-  /* ---------- Contador animado das estatísticas ---------- */
-  var counted = false;
-  function animateCounters() {
-    if (counted) return;
-    counted = true;
-    document.querySelectorAll(".stat-num[data-count]").forEach(function (el) {
-      var target = parseInt(el.getAttribute("data-count"), 10) || 0;
-      var dur = 1200, start = null;
-      function tick(ts) {
-        if (!start) start = ts;
-        var p = Math.min((ts - start) / dur, 1);
-        var eased = 1 - Math.pow(1 - p, 3);
-        el.textContent = Math.round(target * eased);
-        if (p < 1) requestAnimationFrame(tick);
-      }
-      requestAnimationFrame(tick);
-    });
-  }
-  var statsSection = document.querySelector(".stats");
-  if (statsSection && "IntersectionObserver" in window &&
-      !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-    new IntersectionObserver(function (entries, obs) {
-      if (entries[0].isIntersecting) { animateCounters(); obs.disconnect(); }
-    }, { threshold: 0.4 }).observe(statsSection);
   }
 
   /* ---------- Formulário de contato ----------
@@ -126,7 +123,7 @@
           setStatus(data.error || "Não foi possível enviar. Tente novamente em instantes.", "err");
         }
       } catch (err) {
-        setStatus("Sem conexão no momento. Tente de novo ou escreva para contato@tundraconsultoria.com.br.", "err");
+        setStatus("Sem conexão no momento. Tente de novo ou fale com a gente no WhatsApp (11) 93020-1283.", "err");
       } finally {
         if (btn) { btn.disabled = false; btn.textContent = originalLabel; }
       }
