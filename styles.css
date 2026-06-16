@@ -107,7 +107,7 @@ h3 { font-size: 1.22rem; font-weight: 600; }
 .header-inner { display: flex; align-items: center; justify-content: space-between; height: 72px; }
 
 .brand { display: inline-flex; align-items: center; gap: .6rem; }
-.brand-mark { flex: none; }
+.brand-mark { flex: none; height: auto; }
 .brand-name { font-weight: 700; font-size: 1.18rem; display: flex; align-items: baseline; gap: .3rem; }
 .brand-sub {
   font-family: "Inter", sans-serif;
