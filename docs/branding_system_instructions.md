@@ -27,7 +27,7 @@
 | **White (Branco)** | [cite_start]Body text and background [cite: 208] | [cite_start]234 237 246 [cite: 208] | [cite_start]EAEDF6 [cite: 208] |
 | **Black (Preto)** | [cite_start]Body text and background [cite: 209] | [cite_start]39 40 43 [cite: 209] | [cite_start]27282B [cite: 210] |
 | **Green (Verde)** | [cite_start]Accent color and secondary background [cite: 210] | [cite_start]164 184 147 [cite: 211] | [cite_start]A4B893 [cite: 211] |
-| **Red (Vermelho)** | [cite_start]Accent color and secondary background [cite: 212] | [cite_start]221 116 115 [cite: 212] | [cite_start]DD7473 [cite: 212] |
+| **Red (Vermelho)** | [cite_start]Accent color and secondary background [cite: 212] | [cite_start]212 144 132 [cite: 212] | [cite_start]D49084 [cite: 212] |
 
 * [cite_start]Note the application examples on pages 00, 03, and 04[cite: 213].
 
