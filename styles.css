@@ -451,7 +451,7 @@ h3 {
    Sections base
 =================================================================== */
 .section {
-  padding-block: clamp(3.5rem, 8vw, 6rem);
+  padding-top: clamp(3.5rem, 8vw, 6rem);
 }
 
 .section-ice {
@@ -569,6 +569,10 @@ h3 {
 }
 
 /* ---------- About ---------- */
+#sobre {
+  padding-bottom: clamp(3.5rem, 8vw, 6rem);
+}
+
 .about-grid {
   max-width: 720px;
 }
