@@ -570,7 +570,11 @@ h3 {
 
 /* ---------- About ---------- */
 #sobre {
-  padding-bottom: clamp(3.5rem, 8vw, 6rem);
+  padding-block: clamp(3.5rem, 8vw, 6rem);
+}
+
+#contato {
+  padding-block: clamp(3.5rem, 8vw, 6rem);
 }
 
 .about-grid {
