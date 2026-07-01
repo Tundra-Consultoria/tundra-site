@@ -201,7 +201,7 @@ h3 {
 
 .site-header.scrolled {
   background: rgba(234, 237, 246, .92);
-  box-shadow: 0 1px 0 var(--line), 0 6px 20px rgba(35, 42, 54, .06);
+  box-shadow: 0 1px 0 var(--line), 0 6px 20px rgba(39, 40, 43, .06);
 }
 
 .header-inner {
