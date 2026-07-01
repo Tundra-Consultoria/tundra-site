@@ -28,9 +28,11 @@
   /* Body text and dark backgrounds */
   --ink-soft: #5e6168;
   /* Secondary text */
-  --white: var(--brand-white);
+  --white: #ffffff;
+  /* Pure white */
+  --page-bg: var(--brand-white);
   /* Light mode body background */
-  --card-bg: #ffffff;
+  --card-bg: var(--white);
   /* Pure white background for card contrast */
   --line: #d7dcea;
 
@@ -66,7 +68,7 @@ html {
 body {
   font-family: "DM Sans", system-ui, -apple-system, sans-serif;
   color: var(--ink);
-  background: var(--white);
+  background: var(--page-bg);
   font-weight: var(--weight-body);
   line-height: 1.65;
   -webkit-font-smoothing: antialiased;
@@ -698,7 +700,7 @@ h3 {
   padding: .8rem .95rem;
   border: 1.5px solid var(--line);
   border-radius: var(--radius-sm);
-  background: var(--white);
+  background: var(--page-bg);
   transition: border-color .2s, box-shadow .2s;
   resize: none;
 }
